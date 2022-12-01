@@ -20,6 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   void initState() {
     super.initState();
     Smartech().onHandleDeeplinkActionBackground();
+    Smartech().setUserIdentity("softcoder404@gmail.com");
   }
 
   @override
@@ -45,7 +46,10 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Text(
                   "When you do a login to your application you should call to login method of SmartechSDK",
-                  style: TextStyle(color: Colors.blue, fontSize: 16, fontWeight: FontWeight.w400),
+                  style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400),
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
@@ -54,7 +58,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 Container(
                   color: Colors.grey.shade200,
                   child: TextField(
-                    decoration: const InputDecoration(hintText: "Enter primary key as per Smartech Panel.", contentPadding: EdgeInsets.all(5)),
+                    decoration: const InputDecoration(
+                        hintText: "Enter primary key as per Smartech Panel.",
+                        contentPadding: EdgeInsets.all(5)),
                     onChanged: (value) {
                       _name = value;
                     },
@@ -68,13 +74,19 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: EdgeInsets.all(15),
                   child: Text(
                     "Login",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white),
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white),
                   ),
                   color: Colors.deepOrange,
                   onPressed: () async {
                     if (_name.isNotEmpty) {
                       await Smartech().login(_name);
-                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (builder) => HomeScreen()), (Route<dynamic> route) => false);
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (builder) => HomeScreen()),
+                          (Route<dynamic> route) => false);
                     } else {
                       showToast("Please enter primary key");
                     }
@@ -88,7 +100,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: EdgeInsets.all(15),
                   child: Text(
                     "Create An Account",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white),
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white),
                   ),
                   color: Colors.blue,
                   onPressed: () {
@@ -105,11 +120,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 Center(
                   child: InkWell(
                     onTap: () {
-                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (builder) => HomeScreen()), (Route<dynamic> route) => false);
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (builder) => HomeScreen()),
+                          (Route<dynamic> route) => false);
                     },
                     child: Text(
                       "Continue as guest",
-                      style: TextStyle(color: Colors.deepOrange, fontSize: 16, fontWeight: FontWeight.w600),
+                      style: TextStyle(
+                          color: Colors.deepOrange,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600),
                       textAlign: TextAlign.center,
                     ),
                   ),

@@ -42,7 +42,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Container(
                   color: Colors.grey.shade200,
                   child: TextField(
-                    decoration: const InputDecoration(hintText: "Enter your first name", contentPadding: EdgeInsets.all(5)),
+                    decoration: const InputDecoration(
+                        hintText: "Enter your first name",
+                        contentPadding: EdgeInsets.all(5)),
                     onChanged: (value) {
                       _firstName = value;
                     },
@@ -54,7 +56,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Container(
                   color: Colors.grey.shade200,
                   child: TextField(
-                    decoration: const InputDecoration(hintText: "Enter your last name", contentPadding: EdgeInsets.all(5)),
+                    decoration: const InputDecoration(
+                        hintText: "Enter your last name",
+                        contentPadding: EdgeInsets.all(5)),
                     onChanged: (value) {
                       _lastName = value;
                     },
@@ -66,7 +70,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Container(
                   color: Colors.grey.shade200,
                   child: TextField(
-                    decoration: const InputDecoration(hintText: "Enter your email", contentPadding: EdgeInsets.all(5)),
+                    decoration: const InputDecoration(
+                        hintText: "Enter your email",
+                        contentPadding: EdgeInsets.all(5)),
                     onChanged: (value) {
                       _email = value;
                     },
@@ -78,7 +84,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Container(
                   color: Colors.grey.shade200,
                   child: TextField(
-                    decoration: const InputDecoration(hintText: "Enter your age", contentPadding: EdgeInsets.all(5)),
+                    decoration: const InputDecoration(
+                        hintText: "Enter your age",
+                        contentPadding: EdgeInsets.all(5)),
                     onChanged: (value) {
                       _age = value;
                     },
@@ -92,7 +100,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   padding: EdgeInsets.all(15),
                   child: Text(
                     "Create An Account",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white),
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white),
                   ),
                   color: Colors.blue,
                   onPressed: () async {
@@ -113,10 +124,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       return;
                     }
 
-                    var map = {"first_name": _firstName, "last_name": _lastName, "email": _email, "age": _age};
+                    var map = {
+                      "first_name": _firstName,
+                      "last_name": _lastName,
+                      "email": _email,
+                      "age": _age
+                    };
+                    await Smartech().setUserIdentity(_email);
                     await Smartech().login(_email);
                     await Smartech().updateUserProfile(map);
-                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (builder) => HomeScreen()), (Route<dynamic> route) => false);
+                    // Navigator.pushAndRemoveUntil(
+                    //     context,
+                    //     MaterialPageRoute(builder: (builder) => HomeScreen()),
+                    //     (Route<dynamic> route) => false);
                   },
                 ),
                 SizedBox(

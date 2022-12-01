@@ -1,4 +1,4 @@
-package com.netcore.smartech_app
+package com.sterling.doubble
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.netcore.android.smartechpush.SmartPush

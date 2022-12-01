@@ -1,4 +1,4 @@
-package com.netcore.smartech_app
+package com.sterling.doubble
 
 import io.flutter.embedding.android.FlutterActivity
 import android.os.Bundle

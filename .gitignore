@@ -237,11 +237,6 @@ DerivedData/
 
 ### https://raw.github.com/github/gitignore/80a8803b004013d17291196825a327b9e871f009/Global/VisualStudioCode.gitignore
 
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 
 
 ## Custom
@@ -250,3 +245,5 @@ GoogleService-Info.plist
 google-services.json
 # Plugins (already resolved through pubspec.yaml)
 .flutter-plugins
+temp_auto_push.bat
+temp_interactive_push.bat
