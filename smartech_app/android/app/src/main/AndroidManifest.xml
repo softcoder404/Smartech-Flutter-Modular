@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.netcore.smartech_app">
+    package="com.sterling.doubble">
     <uses-permission android:name="android.permission.INTERNET" /> 
    <application
         android:label="smartech_app"
@@ -40,7 +40,7 @@
             android:value="TXMY6EYG0EMVYT7A42DHN9CRP37TXGKU38MR92S36LX0QIKOL0" />
         <meta-data
             android:name="SMT_APP_ID"
-            android:value="c27a614b216e64a51ba23bb63d7e9968" />
+            android:value="fac1e4782da7b40357d155f9a2b116b1" />
        <service android:name=".MyFirebaseMessagingService"
            android:exported="false">
            <intent-filter>

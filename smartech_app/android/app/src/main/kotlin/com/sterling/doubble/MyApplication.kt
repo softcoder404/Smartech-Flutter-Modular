@@ -1,4 +1,4 @@
-package com.netcore.smartech_app
+package com.sterling.doubble
 
 import android.util.Log
 import com.netcore.android.Smartech
